@@ -348,7 +348,7 @@ void csr_matrix_symmetric_vector_cond(int *IA, double *AA, int *JA, double *x, d
         for (int k = jstart; k < jend; ++k)
         {
             int j = JA[k];
-            y[i] += (AA[k] / AA[k]) * x[j];
+            y[i] += (1 / AA[k]) * x[j];
             if (i != j)
             {
                 y[j] += 0.0;
